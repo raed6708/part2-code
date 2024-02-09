@@ -1,0 +1,22 @@
+class Student:
+    def __init__(self, name, subject_grades):
+        self.name = name
+        self.subject_grades = subject_grades
+
+    def calculate_average(self):
+        return sum(self.subject_grades) / len(self.subject_grades)
+
+    def pass_or_fail(self):
+        average_grade = self.calculate_average()
+        if average_grade > 60:
+            return f"{self.name} passes with an average grade of {average_grade:.2f}"
+        else:
+            return f"{self.name} fails with an average grade of {average_grade:.2f}"
+
+
+# Example usage:
+student1 = Student("John", [70, 80, 50, 90])
+print(student1.pass_or_fail())
+
+student2 = Student("Alice", [55, 60, 65, 70])
+print(student2.pass_or_fail())
